@@ -10,8 +10,9 @@ const rotas = {
 };
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end(rotas[req.url]);
+  //cria o servidor
+  res.writeHead(200, { 'Content-Type': 'text/plain' }); //cria o cabeçalho com resposta 200 do tipo texto
+  res.end(rotas[req.url]); //finaliza a rota
 });
 
 server.listen(port, () => {
