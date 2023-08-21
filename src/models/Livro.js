@@ -2,13 +2,19 @@ import mongoose from 'mongoose';
 
 const livroSchema = new mongoose.Schema({
   id: { type: String },
-  titulo: { type: String, required: true },
-  autor: {
-    type: mongoose.Schema.Types.ObjectId, //referência para o modelo de autor
-    ref: 'autores',
-    required: true,
+  titulo: {
+    type: String,
+    required: [true, 'O título do livro é obrigatório'],
   },
-  editora: { type: String, required: true },
+  autor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'autores',
+    required: [true, 'O(a) autor(a) é obrigatório'],
+  },
+  editora: {
+    type: String,
+    required: [true, 'A editora é obrigatória'],
+  },
   numeroPaginas: { type: Number },
 });
 
