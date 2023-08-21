@@ -6,5 +6,3 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`O Servidor está escutando na url: http://localhost:${port}`);
 });
-
-934184;
